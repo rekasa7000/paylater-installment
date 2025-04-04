@@ -103,8 +103,7 @@ const App = () => {
   };
 
   return (
-    <div className="w-full h-screen items-center justify-center py-14">
-      <div className="main"></div>
+    <div className="flex items-center justify-center h-full w-full py-44">
       <motion.div
         initial={{
           backgroundImage:
@@ -126,11 +125,13 @@ const App = () => {
           backgroundClip: "padding-box, border-box",
           backgroundOrigin: "padding-box, border-box",
           width: 720,
-          height: "50%",
+          height: "100%",
           margin: "auto",
           padding: 20,
         }}
       >
+        {" "}
+        <div className="main"></div>
         <h1 className="text-4xl font-bold mb-6 text-black">
           Installment Payment Calculator
         </h1>
@@ -190,18 +191,18 @@ const App = () => {
               <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
                 <div className="bg-white p-3 rounded shadow">
                   <p className="text-gray-600">Original Price</p>
-                  <p className="text-xl font-bold">${originalPrice}</p>
+                  <p className="text-xl font-bold">₱{originalPrice}</p>
                 </div>
                 <div className="bg-white p-3 rounded shadow">
                   <p className="text-gray-600">Total Payment</p>
                   <p className="text-xl font-bold">
-                    ${calculationResult.totalPayment}
+                    ₱{calculationResult.totalPayment}
                   </p>
                 </div>
                 <div className="bg-white p-3 rounded shadow">
                   <p className="text-gray-600">Total Interest</p>
                   <p className="text-xl font-bold text-red-600">
-                    ${calculationResult.totalInterest}
+                    ₱{calculationResult.totalInterest}
                   </p>
                 </div>
                 <div className="bg-white p-3 rounded shadow">
@@ -235,16 +236,16 @@ const App = () => {
                       <tr key={payment.month} className="hover:bg-gray-50">
                         <td className="py-2 px-3 border">{payment.month}</td>
                         <td className="py-2 px-3 border text-right">
-                          ${payment.payment}
+                          ₱{payment.payment}
                         </td>
                         <td className="py-2 px-3 border text-right text-green-600">
-                          ${payment.principalPaid}
+                          ₱{payment.principalPaid}
                         </td>
                         <td className="py-2 px-3 border text-right text-red-600">
-                          ${payment.interestPaid}
+                          ₱{payment.interestPaid}
                         </td>
                         <td className="py-2 px-3 border text-right">
-                          ${payment.remainingBalance}
+                          ₱{payment.remainingBalance}
                         </td>
                       </tr>
                     ))}
