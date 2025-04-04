@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
+
 interface PaymentBreakdown {
   month: number;
   payment: string;
@@ -101,12 +103,37 @@ const App = () => {
   };
 
   return (
-    <div className="w-full h-screen items-center justify-center">
-      <div className="max-w-4xl m-auto p-5">
-        <h1 className="text-2xl font-bold mb-6 text-blue-800">
+    <div className="w-full h-screen items-center justify-center py-14">
+      <div className="main"></div>
+      <motion.div
+        initial={{
+          backgroundImage:
+            "linear-gradient(to right, white, white), linear-gradient(0deg, blue, white 40%)",
+        }}
+        animate={{
+          backgroundImage:
+            "linear-gradient(to right, white, white), linear-gradient(360deg, blue, white 40%)",
+        }}
+        transition={{
+          type: "tween",
+          ease: "linear",
+          duration: 5,
+          repeat: Infinity,
+        }}
+        style={{
+          border: "2px solid transparent",
+          borderRadius: "20px",
+          backgroundClip: "padding-box, border-box",
+          backgroundOrigin: "padding-box, border-box",
+          width: 720,
+          height: "50%",
+          margin: "auto",
+          padding: 20,
+        }}
+      >
+        <h1 className="text-4xl font-bold mb-6 text-black">
           Installment Payment Calculator
         </h1>
-
         <form
           onSubmit={handleSubmit}
           className="mb-8 grid md:grid-cols-3 gap-4"
@@ -156,7 +183,6 @@ const App = () => {
             </button>
           </div>
         </form>
-
         {calculationResult && (
           <div className="space-y-6">
             <div className="bg-blue-50 p-4 rounded-lg">
@@ -229,7 +255,7 @@ const App = () => {
             {error && <p className="mt-1 text-sm text-red-600">{error}</p>}
           </div>
         )}
-      </div>
+      </motion.div>
     </div>
   );
 };
