@@ -113,7 +113,7 @@ const App = () => {
         >
           <div className="space-y-2">
             <label className="block text-gray-700 font-medium">
-              Original Price ($)
+              Original Price (₱)
               <input
                 type="text"
                 value={originalPrice}
@@ -125,7 +125,7 @@ const App = () => {
 
           <div className="space-y-2">
             <label className="block text-gray-700 font-medium">
-              Monthly Payment ($)
+              Monthly Payment (₱)
               <input
                 type="text"
                 value={monthlyPayment}
