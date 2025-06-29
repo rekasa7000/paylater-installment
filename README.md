@@ -1,54 +1,48 @@
-# React + TypeScript + Vite
+# PayLater Installment Calculator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern web application that helps users understand the true cost of installment payment plans and "buy now, pay later" arrangements. Calculate interest rates, visualize payment schedules, and make informed financial decisions.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Interactive Calculator**: Input original price, monthly payment, and payment period
+- **Financial Analysis**: Calculate total interest, effective interest rate, and payment breakdown
+- **Payment Schedule**: Month-by-month breakdown showing principal vs. interest portions
+- **Visual Design**: Animated UI with gradient borders and star field background
+- **Mobile Responsive**: Optimized for all device sizes
+- **Philippine Peso Support**: Localized for PHP currency
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Frontend Framework**: React 19 with TypeScript
+- **Build Tool**: Vite 6.2
+- **Styling**: Tailwind CSS 4.1
+- **Animations**: Framer Motion 12.6
+- **Development**: ESLint, TypeScript 5.7
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Getting Started
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+
+# Run linting
+npm run lint
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Usage
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. Enter the original price of the item
+2. Input your planned monthly payment amount
+3. Set the number of months for the payment plan
+4. View the calculated total cost, interest, and detailed payment schedule
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+Perfect for consumers who want to understand the financial impact of installment purchases before committing to payment plans.
